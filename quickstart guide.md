@@ -49,5 +49,8 @@ That's done. You will see a page like this:
 
 <img width="1274" alt="image" src="https://github.com/user-attachments/assets/9201256b-b369-495c-bbb3-8ab7020491da" />
 
+#### demo
++ See [`Demo of build a new Angular project and run the server with Angular CLI.`](https://youtu.be/0oXjoliL81I)
+  
 ### reference
 See [`Installing Angular CLI`](https://v17.angular.io/cli#installing-angular-cli)
