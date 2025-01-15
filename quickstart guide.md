@@ -77,9 +77,11 @@ In `.../index.html`, there is a `<html>` tag, which contains `<head>` tag and `<
 > [!TIP]
 > If you are familiar with HTML, you will quick found that they have same hierarchy in `.../index.html` and `.html` file
 >
-> Except that its `<body>` in `.../index.html` contains other tag. 
+> Except that its `<body>` in `.../src/index.html` contains other tag. 
 >
 > So, you can configure the setting of web page (such as title) in this file.
+>
+> To prove that Angular renders `.../index.html`, you can run the [`minimal example ex6.7z` at GitLab](https://gitlab.com/jayw711kb/angular/-/blob/main/minimal%20example/minimal_example_ex6.7z)
 
 Inside `<body>` tag, there is `<app-root>` tag.
 
@@ -102,9 +104,89 @@ export class AppComponent {
   title = 'app-project';
 }
 ```
-   
-2. Next, Angular start to run `.../src/main.ts` file.
 
+> [!WARNING]
+> Using more than one tag inside `<body>`, only the first tag will be rendered on web page.
+>
+> Such as
+>
+> ```
+> <body>
+> <app-root></app-root>
+> <app-root></app-root>
+> </body>
+> ```
+>
+> will have same output than
+>
+> ```
+> <body>
+> <app-root></app-root>
+> </body>
+> ```
+>
+> For fully understand, see [`minimal example ex4.7z` at GitLab](https://gitlab.com/jayw711kb/angular/-/blob/main/minimal%20example/minimal_example_ex4.7z?ref_type=heads)
+>
+> For another example,
+>
+> ```
+> <body>
+> <app-root></app-root>
+> <app-root2></app-root2>
+> </body>
+> ```
+>
+> will have same output than
+>
+> ```
+> <body>
+> <app-root></app-root>
+> </body>
+> ```
+>
+> For fully understand, see [`minimal example ex5.7z` at GitLab](https://gitlab.com/jayw711kb/angular/-/blob/main/minimal%20example/minimal_example_ex5.7z)
+>
+> However, adding HTML built-in tag as component will be rendered, getting different output.
+>
+> Such as
+> ```
+> <!doctype html>
+> <html lang="en">
+> <head>
+> <meta charset="utf-8">
+> <title>FunnyProject</title>
+> <base href="/">
+> <meta name="viewport" content="width=device-width, initial-scale=1">
+> <link rel="icon" type="image/x-icon" href="favicon.ico">
+> </head>
+> <body>
+> <app-root></app-root>
+> <h1>What?</h1>
+> </body>
+> </html>
+> ```
+>
+> has different output than
+>
+>  ```
+> <!doctype html>
+> <html lang="en">
+> <head>
+> <meta charset="utf-8">
+> <title>FunnyProject</title>
+> <base href="/">
+> <meta name="viewport" content="width=device-width, initial-scale=1">
+> <link rel="icon" type="image/x-icon" href="favicon.ico">
+> </head>
+> <body>
+> <app-root></app-root>
+> </body>
+> </html>
+> ```
+>
+> You can verify it by running [`minimal project ex7.7z` at GitLab](https://gitlab.com/jayw711kb/angular/-/blob/main/minimal%20example/minimal_example_ex7.7z)
+
+2. Next, Angular start to run `.../src/main.ts` file.
 
 In `.../src/main.ts`, it bootstraps the component `AppComponent` 
 
@@ -183,7 +265,7 @@ For more details, see [`What is router-outlet in Angular, and where is it used?`
 ### code snippets
 Here, I will list a few important code snippets and will replace unimportant part to comments.
 
-#### `.../index.html`
+#### `.../src/index.html`
 ```
 <!doctype html>
 <html lang="en">
@@ -198,8 +280,8 @@ Here, I will list a few important code snippets and will replace unimportant par
   <app-root></app-root>
 </body>
 </html>
-
 ```
+
 #### `.../src/main.ts`
 
 ```
