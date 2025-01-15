@@ -203,6 +203,7 @@ export class AppComponent {
 <router-outlet />
 ```
 
+For full project, see [`minimal_example_ex1.7z` at GitLab](https://gitlab.com/jayw711kb/angular/-/blob/main/minimal%20example/minimal_example_ex1.7z)
 #### demo
 
 <img width="1276" alt="image" src="https://github.com/user-attachments/assets/39f8fc14-279d-4e83-9249-c56e16d973fe" />
