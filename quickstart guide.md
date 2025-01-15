@@ -54,7 +54,14 @@ That's done. You will see a page like this:
 
 ### How Angular Application Run?
 
-1. Angular started with `.../src/main.ts`.
+- Angular started with main.ts.
+- Then we bootstrap an angular application and we pass app.module.ts as an argument. In app.module.ts we tell angular: "There is the app component which you should know when you try to start yourself".
+- And angular now analyze this app component, reading the set up we pass there and there is SELECTOR app-root.
+- Now, angular is enable to handle app-root in the index.html and knows rules for the SELECTOR.
+- SELECTOR should insert the app components and have some HTML code - a template attached to him - html component.
+- This is how Angular application starts.
+
+For more details, see [`How Angular Application Run? which file executes first?`](https://stackoverflow.com/questions/59625412/how-angular-application-run-which-file-executes-first)
 
 ### Dive into Angular project.
 
@@ -70,9 +77,9 @@ And `AppComponent` is defined in `.../src/app/app.config`
 
 (you can know it through the import statement `import { AppComponent } from './app/app.component';` in `.../src/main.ts`)
 
-2. Thus, look at `.../src/app/app.component` file.
+2. Thus, look at `.../src/app/app.component.ts` file.
 
-In `.../src/app/app.component` file, you will see two code snippets.
+In `.../src/app/app.component.ts` file, you will see two code snippets.
 
 + First code snippets
 
@@ -136,7 +143,65 @@ For more details, see [`What is router-outlet in Angular, and where is it used?`
 
  
    
-#### full code
+### code snippets
+Here, I will list a few important code snippets and will replace unimportant part to comments.
+
+#### `.../src/main.ts`
+
+```
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(AppComponent, appConfig)
+  .catch((err) => console.error(err));
+```
+
+#### `.../src/app/app.component.ts`
+
+```
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
+})
+export class AppComponent {
+  title = 'app-project';
+}
+```
+#### `.../src/app/app.component.html`
+
+```
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+   <!-- define your style -->
+</style>
+
+<main class="main">
+  <!-- render your component which will be displayed on web page -->
+</main>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<router-outlet />
+```
 
 #### demo
 
