@@ -74,11 +74,19 @@ Let's dive some files in project in Angular.
 
 In `.../index.html`, there is a `<html>` tag, which contains `<head>` tag and `<body>` tag.
 
+> [!TIP]
+> If you are familiar with HTML, you will quick found that they have same hierarchy in `.../index.html` and `.html` file
+>
+> Except that its `<body>` in `.../index.html` contains other tag. 
+>
+> So, you can configure the setting of web page (such as title) in this file.
+
 Inside `<body>` tag, there is `<app-root>` tag.
 
-Where does `<app-root>` come from? 
-
-It can be seem in selector argument inside a component which is defined in `.../src/app/app.component.ts` 
+> [!TIP]
+> Where does `<app-root>` come from? 
+> 
+> It can be seem in selector argument inside a component which is defined in `.../src/app/app.component.ts` 
 
 ```
 import { Component } from '@angular/core';
@@ -175,6 +183,23 @@ For more details, see [`What is router-outlet in Angular, and where is it used?`
 ### code snippets
 Here, I will list a few important code snippets and will replace unimportant part to comments.
 
+#### `.../index.html`
+```
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AppProject</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+
+```
 #### `.../src/main.ts`
 
 ```
