@@ -51,6 +51,17 @@ That's done. You will see a page like this:
 
 #### demo
 + See [`Demo of build a new Angular project and run the server with Angular CLI.`](https://youtu.be/0oXjoliL81I)
-  
+
+### How Angular Application Run?
+
+- Angular started with main.ts.
+- Then we bootstrap an angular application and we pass app.module.ts as an argument. In app.module.ts we tell angular: "There is the app component which you should know when you try to start yourself".
+- And angular now analyze this app component, reading the set up we pass there and there is SELECTOR app-root.
+- Now, angular is enable to handle app-root in the index.html and knows rules for the SELECTOR.
+- SELECTOR should insert the app components and have some HTML code - a template attached to him - html component.
+
+#### reference 
+See [`How Angular Application Run? which file executes first?`](https://stackoverflow.com/questions/59625412/how-angular-application-run-which-file-executes-first)
+
 ### reference
 See [`Installing Angular CLI`](https://v17.angular.io/cli#installing-angular-cli)
