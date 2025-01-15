@@ -64,10 +64,39 @@ That's done. You will see a page like this:
 For more details, see [`How Angular Application Run? which file executes first?`](https://stackoverflow.com/questions/59625412/how-angular-application-run-which-file-executes-first)
 
 ### Dive into Angular project.
+After you create the project with Angular CLI, by default, you will see these files.
 
-1. First, Angular started with `.../src/main.ts`.
+<img width="460" alt="image" src="https://github.com/user-attachments/assets/71399308-3892-41f0-a316-9d8dd83e07f3" />
+
+Let's dive some files in project in Angular.
+
+1. First, Angular renders `.../index.html`.
+
+In `.../index.html`, there is a `<html>` tag, which contains `<head>` tag and `<body>` tag.
+
+Inside `<body>` tag, there is `<app-root>` tag.
+
+Where does `<app-root>` come from? 
+
+It can be seem in selector argument inside a component which is defined in `.../src/app/app.component.ts` 
+
+```
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
+})
+export class AppComponent {
+  title = 'app-project';
+}
+```
    
-Thus look at `.../src/main.ts` file. 
+2. Next, Angular start to run `.../src/main.ts` file.
+
 
 In `.../src/main.ts`, it bootstraps the component `AppComponent` 
 
@@ -141,7 +170,7 @@ For more details, see [`What is router-outlet in Angular, and where is it used?`
 
 4. In `.../src/app/app.component.scss`. file, you will see an empty file. However you can define your own style in this file.
 
- 
+
    
 ### code snippets
 Here, I will list a few important code snippets and will replace unimportant part to comments.
