@@ -9,12 +9,15 @@
 
 Here is a rule about reflection from `upper-camel case` naming style to `hyphen-delimiter words` naming style.
 
-a. make the first letter as lowercase.
-b. make the 
+a. lowercase it for first letter.
 
+b. After that, for all uppercase letter, replace it to a hypen sign (i.e. `-`) followed by its corresponding lowercase.
 
-  
-  
+For example, 
+
+`PageNotFound` will be `pageNotFound` after step a. 
+
+Then it will be `page-not-found` after b.
 
 > [!NOTE]
 > The phrase `reflect an old name (to a new name) with that naming style` means that
@@ -28,7 +31,7 @@ b. make the
 >
 > For more details, see [`naming convention (Wiki)`](https://en.wikipedia.org/wiki/Naming_convention_(programming))
 
-3. In command-line prompt, type these Angular-CLI commands:
+4. In command-line prompt, type these Angular-CLI commands:
 
 ```
 ng generate component <reflected-name>
@@ -38,7 +41,7 @@ where
 
 `<reflected-name>` is the new name that is reflected from old component name with hyphen-delimiter words naming style.
 
-4. Then it will generate a folder in `../src/app` directory that contains these files.
+5. Then it will generate a folder in `../src/app` directory that contains these files.
 
 Hierarchy as follows.
 
@@ -55,8 +58,54 @@ For fully illustration, I will use following examples.
 
 ## examples
 ### example 1
-Want to create a component with class name `SecondCompoent`.
+Want to create a component with class name `PageNotFoundCompoent`.
 
-1. <old-component-name> is `SecondCompoent`.
-2. Reflect 
+1. <old-component-name> is `PageNotFoundCompoent`.
+2. Remove suffix `PageNotFoundCompoent`, <old-name> is `PageNotFound`.
+3. Reflect <old-name> to a <new-name> with `hyphen-delimiter words` naming style.
+
+a. `PageNotFound` => `pageNotFound`
+
+b. `pageNotFound` => `page-not-found`
+
+So <reflected-name> is `page-not-found`.
+
+4. In command-line prompt, type
+
+```
+ng generate component page-not-found 
+```
+
+<img width="557" alt="image" src="https://github.com/user-attachments/assets/d5a5c035-69a7-4103-ab5e-5e063ebadf04" />
+
+5. Then it will generate a folder in `../src/app` directory that contains these files.
+
+Hierarchy as follows.
+
+```
+page-not-found ---------> page-not-found.component.html
+               ---------> page-not-found.component.scss
+               ---------> page-not-found.component.spec.html
+               ---------> page-not-found.compoent.ts
+```
+
+<img width="611" alt="image" src="https://github.com/user-attachments/assets/58e88305-5ef3-41e6-a1be-e87b027a084f" />
+
+In `page-not-found.compoent.ts` file, you will see the following code snippets.
+
+```
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-page-not-found',
+  imports: [],
+  templateUrl: './page-not-found.component.html',
+  styleUrl: './page-not-found.component.scss'
+})
+export class PageNotFoundComponent {
+
+}
+```
+
+<img width="401" alt="image" src="https://github.com/user-attachments/assets/25ace2a0-3c4d-44ba-9471-764060624421" />
 
