@@ -1,6 +1,6 @@
 # How to generate a new component in Angular-CLI?
 
-[!NOTE]
+> [!NOTE]
 > If you think the naming is too complicated for you, you can see examples in example section, or see steps from step 4 then practice it.
 
 1. Think your component name (named `<old-component-name>`) with `upper-camel case` (e.g. OtherComponent) naming style and must end with `Component`.
