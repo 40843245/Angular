@@ -9,7 +9,11 @@
 
 Here is a rule about reflection from `upper-camel case` naming style to `hyphen-delimiter words` naming style.
 
-  1.1 make the first letter as lowercase.
+a. make the first letter as lowercase.
+b. make the 
+
+
+  
   
 
 > [!NOTE]
