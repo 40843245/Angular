@@ -7,7 +7,7 @@
 2. Remove the suffix `Component` from `<old-component-name>`, creating `<old-name>` 
 3. Reflect <old-name> to a <new-name> with `hyphen-delimiter words` naming style.
 
-Here is a rule about reflection from `upper-camel case` naming style to `hyphen-delimiter words` naming style.
+Here is a rule about [reflection from `upper-camel case` naming style to `hyphen-delimiter words` naming style](https://github.com/40843245/Angular/blob/main/naming-convention/%60upper-camel%20case%60%20naming%20style%20to%20%60hyphen-delimiter%20word%60%20naming%20style.md).
 
 a. lowercase it for first letter.
 
